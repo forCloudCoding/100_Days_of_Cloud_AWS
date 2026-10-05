@@ -7,7 +7,7 @@
 
 Create a Key Pair with the following requirements :
 
-Key Pair Name : `devops-kp`
+Key Pair Name : `devops-kp`\
 Key Pair Type : `rsa`
 
 #### AWS Menu Navigation :
