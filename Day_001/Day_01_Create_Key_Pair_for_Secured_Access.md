@@ -10,13 +10,13 @@ Create a Key Pair with the following requirements :
 Key Pair Name : `devops-kp`
 Key Pair Type : `rsa`
 
-### AWS Menu Navigation :
+#### AWS Menu Navigation :
 AWS Console [ Region : N. Virginia ] --> EC2 --> Network & Security --> Key Pairs
 
 ## Real-World Scenario :
 Losing an AWS EC2 private key pair (.pem file) is a common operational mishap in real-world IT and DevOps environments that temporarily halts SSH access
 
-### Modern Alternatives : 
+#### Modern Alternatives : 
 AWS Systems Manager (SSM) SSM Agent is pre-installed with correct IAM permissions, administrators can bypass SSH keys entirely and run automation documents like AWSSupport-ResetAccess to regain entry instantly.
 
 ## Security Compliance Violation : 
