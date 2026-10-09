@@ -2,8 +2,7 @@
 # Day 03 : Create a Subnet
 
 
-
-## Task :
+## 🎯 Task :
 Create a Subnet under default VPC with the following requirements:
 
 Name : ```datacenter-subnet```
@@ -11,7 +10,7 @@ Name : ```datacenter-subnet```
 #### AWS Menu Navigation :
 AWS Console [ Region : N. Virginia ] --> VPC --> Subnets
 
-## Real-World Scenario : 3-Tier Web Application
+## 🌍 Real-World Scenario : 3-Tier Web Application
 
 The most common real-world design uses public, private, and isolated subnets to run a secure web application (like an e-commerce website).
 
@@ -31,7 +30,7 @@ The most common real-world design uses public, private, and isolated subnets to 
 * **Security Layering :** Control traffic using stateful Security Groups on individual instances and stateless Network ACLs (NACLs) as a firewall at the subnet boundary.
 
 
-## AWS Subnet Best Practices :
+## ✅ AWS Subnet Best Practices :
 
 Designing subnets in a VPC requires careful planning around sizing, security, and high availability.
 Implementing these foundational best practices will help us avoid future network architecture overhauls and ensure enterprise-grade security.
@@ -72,7 +71,7 @@ Implementing these foundational best practices will help us avoid future network
 	* **Consistent Tagging :** Standardize the subnet names (e.g., vpc-prod-private-app-az1). This makes automation, Infrastructure as Code (IaC), and cost allocation tracking seamless as our footprint grows.
 
 
-## What is an AWS Subnet ?
+## 📚 What is an AWS Subnet ?
 
 An AWS subnet is a logical range of IP addresses inside a VPC that lets us group and isolate our cloud resources.
 

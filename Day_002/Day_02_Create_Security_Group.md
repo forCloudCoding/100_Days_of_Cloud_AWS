@@ -3,7 +3,7 @@
 
 
 
-## Task :
+## 🎯 Task :
 Create a Security Group under default VPC with the following requirements:
 Name : ```datacenter-sg```\
 Description : ```Security Group for Nautilus App Servers```\
@@ -16,7 +16,7 @@ In-Bound Traffic :
 #### AWS Menu Navigation :
 AWS Console [ Region : N. Virginia ] --> EC2 --> Network & Security --> Security Groups
 
-## Real-World Scenario : A Standard Web Application
+## 🌍 Real-World Scenario : A Standard Web Application
 
 Imagine an On-Line Store hosted on AWS. Our Architecture has two layers:
 1. ```Web Servers (EC2)``` : Handle public customer traffic (HTTP/HTTPS).
@@ -34,18 +34,18 @@ If a Hacker compromises one of our web servers, the Hacker still cannot access o
 
 
 
-## Security Compliance Violation : 
+## ⚠️ Security Compliance Violation : 
 
 Security Group rules which are overly permissive i.e., exposing administrative Ports like ```SSH (Port 22)``` or ```RDP (Port 3389)``` to the entire internet ```(0.0.0.0/0)``` would result in violation of Security Frameworks like **CIS, PCI-DSS, or SOC 2.**
 
-## Common Causes of Security Group Violations :
+## ⚠️ Common Causes of Security Group Violations :
 
 1. **Unrestricted Access :** Opening sensitive ports ```(TCP/UDP) to 0.0.0.0/0 (IPv4)``` or ```::/0 (IPv6)```.
 2. **Default Security Group Misuse :** Using the default VPC security group with modified, open inbound rules.
 3. **Stale Rules :** Retaining rules referencing deleted security groups or peer resources that no longer exist.
 4. **Over-privileged Load Balancers :** Direct internet access allowed to backend targets bypassing the Application Load Balancer.
 
-## What is an AWS Security Group ?
+## 📚 What is an AWS Security Group ?
 
 A Security Group in AWS is a virtual firewall that controls In-Bound and Out-Bound Traffic for our Cloud Resources, such as Amazon **EC2** instances & others, like Managed Databases ( **RDS & Aurora** ), Load Balancers ( **ALB & NLB** ), Container Services ( **ECS Tasks & EKS Pods** ), Serverless Compute ( **AWS Lambda** ), Storage Services ( **EFS** ).
 
