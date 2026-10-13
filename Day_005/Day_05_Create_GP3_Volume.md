@@ -5,8 +5,8 @@
 ## 🎯 Task :
 
 Create an EBS Volume with the following requirements:\
-Volume Type : ```gp3```\
-Volume Size : ```2 GiB```
+**Volume Type :** ```gp3```\
+**Volume Size :** ```2 GiB```
 
 #### AWS Menu Navigation :
 AWS Console [ Region : N. Virginia ] --> EC2 --> EBS --> Volumes
