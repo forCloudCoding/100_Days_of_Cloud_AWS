@@ -54,3 +54,70 @@ AWS Console [ Region : N. Virginia ] --> EC2 --> EBS --> Volumes
 * **Provisioned IOPS (io2 Block Express / io1) :** High-performance SSDs built for mission-critical, low-latency relational or NoSQL databases.
 * **Throughput Optimized / Cold HDD (st1 / sc1) :** Low-cost magnetic storage for large, sequential streaming and big data workloads.
 
+## 🛠️ Prepare the New Volume for Use ( i.e., Include it in File-System and access the Storage ) :
+
+
+1. Use command ```lsblk``` to confirm the Device Name.
+
+	```
+	[user@IP ~]$ lsblk
+	NAME      MAJ:MIN RM SIZE RO TYPE MOUNTPOINTS
+	xvda      202:0    0   8G  0 disk 
+	├─xvda1   202:1    0   8G  0 part /
+	├─xvda127 259:0    0   1M  0 part 
+	└─xvda128 259:1    0  10M  0 part 
+	xvdf      202:80   0  20G  0 disk 
+	```
+
+2. Detect File System on the Device.
+	```
+	[user@IP ~]$ sudo file -s /dev/xvdf
+	/dev/xvdf: data
+	```
+	Output shows ```data``` means no filesystem exists on the Device.
+
+3. Create a filesystem of type : ```xfs``` on the attached EBS Volume.
+	```
+	[user@IP ~]$ sudo mkfs -t xfs /dev/xvdf
+	```
+
+4. Detect File System on the Device.
+	```
+	[user@IP ~]$ sudo file -s /dev/xvdf
+	/dev/xvdf: SGI XFS filesystem data (blksz 4096, inosz 512, v2 dirs)
+	```
+
+5. To use the volume we need to mount to a directory.
+	```
+	[user@IP ~]$ mkdir ~/ebsdemo
+	```
+
+6. Mount directory to volume attached.
+	```
+	[user@IP ~]$ sudo mount /dev/xvdf ~/ebsdemo
+	```
+
+7. Verify Filesystem available for use.
+	```
+	[user@IP ~]$ df -k
+	```
+
+8. This Block Device is available for the current Session only.\
+	To configure the filesystem for automatic mounting during the boot process:
+
+	Obtain the unique identifier of the EBS volume ( ```/dev/xvdf``` ).\
+	Edit the ```/etc/fstab``` file and add the necessary configurations.
+
+9. To obtain the UUID of the attached volume ( ```/dev/xvdf``` ), execute the following command:
+
+	```
+	sudo blkid
+	```
+
+
+10. Incorporate the UUID into the below line and append this line to the ```/etc/fstab``` file:
+
+	```
+	UUID="xxxxxxxxxxx" ~/ebsdemo xfs defaults nofail
+	```
+
