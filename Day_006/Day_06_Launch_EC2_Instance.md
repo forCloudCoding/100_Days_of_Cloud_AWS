@@ -11,7 +11,7 @@ Create an EC2 Instance with the below details :
 4. **Key Pair Name :** xfusion-kp ( Create a new RSA Key Pair )
 5. Attach the **default Security Group** (available by default)
 
-#### **AWS Menu Navigation :**
+#### AWS Menu Navigation :
 AWS Console [ Region : N. Virginia ] --> EC2
 
 ## 🌍 Real-World Scenario : 
@@ -118,10 +118,8 @@ An Amazon EC2 (Elastic Compute Cloud) instance is a virtual server running in th
 
 Amazon EC2 (Elastic Compute Cloud) serves as the fundamental compute foundation for cloud architecture. In production environments, EC2 is rarely used as an isolated virtual machine; instead, it is integrated with networking, security, and scaling services to solve specific business challenges.
 
-![EC2 Instance](Images/EC2_Instance.png)
 
-
-#### **Key Concepts**
+Key Concepts
 
 * **Virtual Server ("Instance") :** Instead of buying and maintaining physical hardware, you spin up a software-based computer in the cloud with your choice of operating system (such as Amazon Linux, Ubuntu, Windows Server, or Red Hat).
 * **Full Control :** You have root/administrator access to the operating system, allowing you to install applications, configure firewalls, and apply updates yourself.
@@ -129,7 +127,7 @@ Amazon EC2 (Elastic Compute Cloud) serves as the fundamental compute foundation 
 * **Pay-As-You-Go Billing :** You are typically billed by the second or hour for the time the instance is actively running.
 
 
-#### **EC2 Instance Families**
+EC2 Instance Families
 
 AWS categorizes instances into different "families" depending on the resource balance your workload requires :
 * **General Purpose (e.g., t3, m6) :** Offers a balanced mix of CPU, memory, and networking; great for web servers and development environments.
